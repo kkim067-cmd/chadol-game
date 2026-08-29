@@ -291,7 +291,7 @@ input[type=text]{font-family:'Jua',sans-serif;font-size:20px;width:100%;padding:
 <div id="s-rank" class="hide">
   <div class="card">
     <h2 class="jua center" style="font-size:26px;margin:0">오늘의 랭킹</h2>
-    <div id="rankList" style="margin-top:12px"></div>
+    <div id="rankList" style="margin-top:12px;max-height:58vh;overflow:auto"></div>
     <p class="muted center" id="syncMsg"></p>
     <div class="row">
       <button class="btn" id="btnBack">처음으로</button>
@@ -398,7 +398,7 @@ function mergeRank(list){
   var out=[],seen={};
   all.forEach(function(e){var k=e.name+'|'+e.score;if(!seen[k]){seen[k]=1;out.push(e)}});
   out.sort(function(a,b){return b.score-a.score});
-  ranking=out.slice(0,20);
+  ranking=out.slice(0,100);
 }
 async function loadRank(){
   mergeRank(parse(lsGet()));drawRank();
@@ -412,7 +412,7 @@ function drawRank(){
   $('syncMsg').textContent=synced?'온라인 랭킹에 저장됐어요':'인터넷이 없어서 이 기기에만 저장됐어요';
   $('syncMsg').style.color=synced?'#2E8B74':'#5F8378';
   if(!ranking.length){L.innerHTML='<p class="muted center">아직 아무도 도전하지 않았어요.<br>첫 번째 기록의 주인공이 되어보세요!</p>';return}
-  L.innerHTML=ranking.slice(0,10).map(function(e,i){
+  L.innerHTML=ranking.slice(0,100).map(function(e,i){
     var me=(e.name===lastName&&e.score===lastScore)?' me':'';
     var t=e.title?'<i>'+esc(e.title)+'</i>':'';
     return '<div class="rank'+me+'"><b>'+(i+1)+'</b><span>'+esc(e.name)+t+'</span><em>'+e.score+'</em></div>'
