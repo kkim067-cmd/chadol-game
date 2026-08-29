@@ -105,7 +105,13 @@ input[type=text]{font-family:'Jua',sans-serif;font-size:20px;width:100%;padding:
 .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);
  background:rgba(29,58,51,.94);color:#fff;font-size:14px;padding:11px 18px;border-radius:14px;
  z-index:40;max-width:88%;text-align:center;line-height:1.5}
-.toast.madeby{display:block;margin-top:14px;font-size:13px;color:var(--soft);
+.toast.trow{display:flex;gap:10px;align-items:flex-start;padding:9px 2px;border-bottom:1px solid var(--line)}
+.trow b{font-family:'Jua',sans-serif;color:var(--line);font-size:17px;width:18px;flex:none}
+.trow span{font-size:15px;color:var(--soft);line-height:1.35}
+.trow span i{display:block;font-style:normal;font-size:12.5px;color:var(--soft);margin-top:1px}
+.trow.got b{color:var(--sun)}
+.trow.got span{color:var(--ink);font-weight:700}
+.madeby{display:block;background:none;border:none;cursor:pointer;font-family:inherit;margin-top:14px;font-size:13px;color:var(--soft);
  text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;
  width:fit-content;margin-left:auto;margin-right:auto}
 .stack{display:flex;flex-direction:column;gap:12px;margin-top:18px}
@@ -130,7 +136,13 @@ input[type=text]{font-family:'Jua',sans-serif;font-size:20px;width:100%;padding:
 .hide{display:none}
 .overlay{position:fixed;inset:0;background:rgba(29,58,51,.5);display:flex;
  align-items:center;justify-content:center;padding:20px;z-index:20}
-.overlay.madeby{display:block;margin-top:14px;font-size:13px;color:var(--soft);
+.overlay.trow{display:flex;gap:10px;align-items:flex-start;padding:9px 2px;border-bottom:1px solid var(--line)}
+.trow b{font-family:'Jua',sans-serif;color:var(--line);font-size:17px;width:18px;flex:none}
+.trow span{font-size:15px;color:var(--soft);line-height:1.35}
+.trow span i{display:block;font-style:normal;font-size:12.5px;color:var(--soft);margin-top:1px}
+.trow.got b{color:var(--sun)}
+.trow.got span{color:var(--ink);font-weight:700}
+.madeby{display:block;background:none;border:none;cursor:pointer;font-family:inherit;margin-top:14px;font-size:13px;color:var(--soft);
  text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;
  width:fit-content;margin-left:auto;margin-right:auto}
 .stack{display:flex;flex-direction:column;gap:12px;margin-top:18px}
@@ -155,7 +167,13 @@ input[type=text]{font-family:'Jua',sans-serif;font-size:20px;width:100%;padding:
 .hide{display:none}
 .mini{font-family:'Jua',sans-serif;font-size:14px;border:2px solid var(--line);background:#fff;
  color:var(--soft);border-radius:14px;padding:9px 14px;margin-top:10px;cursor:pointer}
-.madeby{display:block;margin-top:14px;font-size:13px;color:var(--soft);
+.trow{display:flex;gap:10px;align-items:flex-start;padding:9px 2px;border-bottom:1px solid var(--line)}
+.trow b{font-family:'Jua',sans-serif;color:var(--line);font-size:17px;width:18px;flex:none}
+.trow span{font-size:15px;color:var(--soft);line-height:1.35}
+.trow span i{display:block;font-style:normal;font-size:12.5px;color:var(--soft);margin-top:1px}
+.trow.got b{color:var(--sun)}
+.trow.got span{color:var(--ink);font-weight:700}
+.madeby{display:block;background:none;border:none;cursor:pointer;font-family:inherit;margin-top:14px;font-size:13px;color:var(--soft);
  text-decoration:none;border-bottom:1px solid var(--line);padding-bottom:2px;
  width:fit-content;margin-left:auto;margin-right:auto}
 .stack{display:flex;flex-direction:column;gap:12px;margin-top:18px}
@@ -203,9 +221,10 @@ input[type=text]{font-family:'Jua',sans-serif;font-size:20px;width:100%;padding:
   <button class="btn duo" id="btnDuo">둘이서 대결</button>
   <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
     <button class="mini" id="btnMute">노래 끄기</button>
+    <button class="mini titlesbtn">칭호 모음</button>
     <button class="mini" id="btnShare">친구에게 공유하기</button>
   </div>
-  <a class="madeby" href="https://instagram.com/chadolfamily" target="_blank" rel="noopener">이 게임 어떻게 만들었나요?</a>
+  <button class="madeby">이 게임 어떻게 만들었나요?</button>
 </div>
 
 <div id="s-play" class="hide">
@@ -245,8 +264,11 @@ input[type=text]{font-family:'Jua',sans-serif;font-size:20px;width:100%;padding:
       <button class="btn" id="btnAgain">다시하기</button>
       <button class="btn c" id="btnSave">랭킹에 올리기</button>
     </div>
-    <button class="mini" id="btnShare2">친구에게 자랑하기</button>
-    <a class="madeby" href="https://instagram.com/chadolfamily" target="_blank" rel="noopener">이 게임 어떻게 만들었나요?</a>
+    <div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap">
+      <button class="mini titlesbtn">칭호 모음</button>
+      <button class="mini" id="btnShare2">친구에게 자랑하기</button>
+    </div>
+    <button class="madeby">이 게임 어떻게 만들었나요?</button>
   </div>
 </div>
 
@@ -285,6 +307,31 @@ input[type=text]{font-family:'Jua',sans-serif;font-size:20px;width:100%;padding:
     <h2 class="jua" id="turnTitle" style="font-size:26px;margin:0">1번 선수 차례</h2>
     <p class="muted" id="turnMsg">15초 동안 차돌이를 잡으세요</p>
     <button class="btn" id="btnTurnGo">준비 됐어요</button>
+  </div>
+</div>
+
+<div id="s-titles" class="overlay hide">
+  <div class="card" style="max-width:340px;width:100%;max-height:84vh;overflow:auto">
+    <h2 class="jua center" style="font-size:24px;margin:0">칭호 모음</h2>
+    <p class="muted center" style="margin:4px 0 10px">모은 칭호 <b id="titleCount">0 / 10</b></p>
+    <div id="titleList"></div>
+    <button class="btn c" id="btnTitlesClose" style="margin-top:16px">닫기</button>
+  </div>
+</div>
+
+<div id="s-about" class="overlay hide">
+  <div class="card center" style="max-width:330px;width:100%">
+    <img id="aboutFace" class="face" alt="차돌이" style="width:84px;height:84px">
+    <h2 class="jua" style="font-size:22px;margin:14px 0 0">이 게임 어떻게 만들었나요?</h2>
+    <p class="muted" style="text-align:left;margin-top:12px">
+      초등학생 조카가 100일 아기와 친해지길 바라는 마음에서 만들었어요.<br><br>
+      아기 사진 3장이면 누구나 만들 수 있어요.<br>
+      인스타 피드에 댓글 남겨주시면 DM으로 알려드려요.
+    </p>
+    <div class="stack">
+      <a class="btn" href="https://instagram.com/chadolfamily" target="_blank" rel="noopener" style="text-decoration:none">인스타 보러 가기</a>
+      <button class="btn c" id="btnAboutClose">닫기</button>
+    </div>
   </div>
 </div>
 
@@ -373,18 +420,48 @@ function drawRank(){
 }
 function esc(s){return String(s).replace(/[<>&"]/g,function(c){
   return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]})}
-function titleOf(sc,wk){
-  if(wk===0&&sc>=200)return '차돌이 수호천사';
-  if(sc>=320)return '차돌이 전문가';
-  if(sc>=200)return '까꿍 박사';
-  if(sc>=100)return '까꿍 초보';
-  return '까꿍 새싹';
+var TITLES=[
+ {k:'angel',n:'차돌이 수호천사',c:'한 번도 안 깨우고 400점 이상'},
+ {k:'waker',n:'잠 깨우기 대장',c:'차돌이를 3번 깨워서 울림'},
+ {k:'gold',n:'금손',c:'금빛 차돌이 3마리 이상 잡기'},
+ {k:'combo',n:'까꿍 기계',c:'연속 12번 이상 성공'},
+ {k:'paci',n:'쪽쪽이 사냥꾼',c:'쪽쪽이 2개 이상 먹기'},
+ {k:'t5',n:'차돌이 레전드',c:'1000점 이상'},
+ {k:'t4',n:'차돌이 전문가',c:'700점 이상'},
+ {k:'t3',n:'까꿍 박사',c:'400점 이상'},
+ {k:'t2',n:'까꿍 초보',c:'200점 이상'},
+ {k:'t1',n:'까꿍 새싹',c:'게임 한 판 끝내기'}];
+var TKEY='chadol:titles';
+function earned(){try{return JSON.parse(localStorage.getItem(TKEY))||[]}catch(e){return []}}
+function addEarned(k){
+  try{var e=earned();if(e.indexOf(k)<0){e.push(k);localStorage.setItem(TKEY,JSON.stringify(e))}}catch(e){}
+}
+function titleOf(sc,wk,gd,pc,bc,cry){
+  if(wk===0&&sc>=400)return TITLES[0];
+  if(cry)return TITLES[1];
+  if(gd>=3)return TITLES[2];
+  if(bc>=12)return TITLES[3];
+  if(pc>=2)return TITLES[4];
+  if(sc>=1000)return TITLES[5];
+  if(sc>=700)return TITLES[6];
+  if(sc>=400)return TITLES[7];
+  if(sc>=200)return TITLES[8];
+  return TITLES[9];
+}
+function drawTitles(){
+  var got=earned();
+  $('titleList').innerHTML=TITLES.map(function(t){
+    var on=got.indexOf(t.k)>=0;
+    return '<div class="trow'+(on?' got':'')+'"><b>'+(on?'★':'☆')+'</b>'+
+      '<span>'+t.n+'<i>'+t.c+'</i></span></div>'
+  }).join('');
+  $('titleCount').textContent=got.length+' / '+TITLES.length;
 }
 
 var MAXWAKE=3;
 var mode='solo',duoTurn=1,duoScores=[0,0];
 var TOTAL=30,STORM_AT=9,cells=[],score=0,combo=0,best=0,left=30;
-var taps=0,good=0,wakes=0,boostUntil=0;
+var taps=0,good=0,wakes=0,golds=0,pacis=0,boostUntil=0;
 var tickT=null,spawnT=null,storming=false,missed=0,paused=false;
 var G=$('grid');
 for(var i=0;i<9;i++){
@@ -401,7 +478,7 @@ function drawMood(){
 }
 function stopGame(){
   clearInterval(tickT);clearTimeout(spawnT);paused=false;
-  $('s-pause').classList.add('hide');$('s-confirm').classList.add('hide');$('s-turn').classList.add('hide');
+  $('s-pause').classList.add('hide');$('s-confirm').classList.add('hide');$('s-turn').classList.add('hide');$('s-about').classList.add('hide');$('s-titles').classList.add('hide');
   cells.forEach(clear);
   document.body.classList.remove('storm');
 }
@@ -424,7 +501,7 @@ function resumeGame(){
 }
 function beginRound(){
   stopGame();
-  score=0;combo=0;best=0;taps=0;good=0;wakes=0;missed=0;boostUntil=0;storming=false;
+  score=0;combo=0;best=0;taps=0;good=0;wakes=0;golds=0;pacis=0;missed=0;boostUntil=0;storming=false;
   TOTAL=(mode==='duo')?15:30;STORM_AT=(mode==='duo')?5:9;
   left=TOTAL;
   $('scoreLabel').textContent=(mode==='duo')?(duoTurn+'번 선수'):'점수';
@@ -523,7 +600,7 @@ function hit(i){
   if(k==='paci'){
     c.done=true;
     if(c.timer){clearTimeout(c.timer);c.timer=null}
-    boostUntil=Date.now()+3000;
+    pacis++;boostUntil=Date.now()+3000;
     $('banner').textContent='쪽쪽이! 3초 동안 점수 2배';
     $('coach').textContent='지금이 기회!';
     fly(c,'2배!','#F0714E');
@@ -531,6 +608,7 @@ function hit(i){
     return;
   }
   taps++;good++;combo++;if(combo>best)best=combo;
+  if(k==='gold')golds++;
   var pts=(k==='gold'?50:(10+(combo>=3?5:0)))*mult();
   score+=pts;c.done=true;
   if(c.timer){clearTimeout(c.timer);c.timer=null}
@@ -548,7 +626,9 @@ function endGame(reason){
     if(duoTurn===1){showTurn(2)}else{duoResult()}
     return;
   }
-  lastScore=score;lastTitle=titleOf(score,wakes);
+  lastScore=score;
+  var T=titleOf(score,wakes,golds,pacis,best,reason==='cry');
+  lastTitle=T.n;addEarned(T.k);
   $('endPill').textContent=(reason==='cry')?'차돌이가 울었어요':'게임 끝!';
   $('endFace').src=(reason==='cry')?WOKE:(score>=150?SMILE:AWAKE);
   $('endTitle').textContent=lastTitle;
@@ -615,6 +695,14 @@ async function syncUp(){
   try{await claudeSet(body)}catch(e){}
   lsSet(body);drawRank();
 }
+$('aboutFace').src=AWAKE;
+Array.prototype.forEach.call(document.querySelectorAll('.titlesbtn'),function(b){
+  b.addEventListener('click',function(){drawTitles();$('s-titles').classList.remove('hide')})});
+$('btnTitlesClose').addEventListener('click',function(){$('s-titles').classList.add('hide')});
+function openAbout(){$('s-about').classList.remove('hide')}
+Array.prototype.forEach.call(document.querySelectorAll('.madeby'),function(b){
+  b.addEventListener('click',openAbout)});
+$('btnAboutClose').addEventListener('click',function(){$('s-about').classList.add('hide')});
 $('btnShare').addEventListener('click',function(){share('차돌이 두더지잡기 같이 하자!')});
 $('btnShare2').addEventListener('click',function(){
   share('나 차돌이 두더지잡기에서 '+lastScore+'점 받았어. 이겨볼래?')});
